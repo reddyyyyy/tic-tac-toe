@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TicTacToe</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
-    <div class='game'></div>
-    <button class="btn" onclick="tic_tac_toe.restart()" title="Restart this game">reiniciar</button>
+    <div class="container">
+        <div>
+            <h1 class="title">Tic Tac Toe</h1>
+            <div class="players-form">
+                <p>Player X:</p>
+                <input type="text" name="x_element" id="x_element" />
+                <p>Player O:</p>
+                <input type="text" name="o_element" id="o_element" />
+                <button class="btn" onclick=" tic_tac_toe.start();">Jogar!</button>
+            </div>
+            <div class="panel">
+                <h2 class="game-narration">Esperando o jogo começar</h2>
+            </div>
+        </div>
+        <div class='game'></div>
+		<button class='btn' onclick='tic_tac_toe.start()'>Reiniciar o jogo</button>
+    </div>
 
     <script src="js/tic-tac-toe.js"></script>
     <script>
-        tic_tac_toe.init( document.querySelector('.game') );
-        tic_tac_toe.start();
+        const container = document.querySelector('.game'),
+        x_element = document.querySelector('#x_element'),
+        o_element = document.querySelector('#o_element'),
+        game_narration = document.querySelector('.game-narration');
+
+
+        tic_tac_toe.init(container, x_element, o_element, game_narration);
+
     </script>
     
+
 </body>
-</html>
+
+</html> 
